@@ -14,7 +14,6 @@ const COLUMNS = [
 export default class DisplayPatientRecords extends LightningElement {
     //@track needRefresh = false;
     @wire(get) records;
-    //@wire(updateRecords, {reload: '$needRefresh'}) records;
     //@track records = [];
     columns = COLUMNS;
     // connectedCallback(){
@@ -24,17 +23,8 @@ export default class DisplayPatientRecords extends LightningElement {
     //     })
     // }
     @api handleRefresh(refresh){
-        get()
-        .then((result)=> {
-            this.records = result;
-            let temp = [];
-temp.push(result);
-//ect ect
-this.data = this.records;
-        }).then(()=> {
             refreshApex(this.get);
             refreshApex(this.records);
-        })
     }
     //incase of no auto refresh
     handleClick(event){
