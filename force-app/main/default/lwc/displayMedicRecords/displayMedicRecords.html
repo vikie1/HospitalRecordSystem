@@ -1,6 +1,6 @@
 <template>
     <lightning-card>
-        <h1>Patients Records</h1>
+        <h1>Medics Records</h1>
         <template if:true={records.data}>
             <lightning-datatable
                 key-field="Id"
@@ -9,6 +9,5 @@
             >
            </lightning-datatable>
         </template>
-        <lightning-button label="Force Refresh" onclick={handleClick}></lightning-button>
     </lightning-card>
 </template>

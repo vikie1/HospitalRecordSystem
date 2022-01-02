@@ -10,4 +10,22 @@ public with sharing class NumberOfRecordedPatients {
         WITH SECURITY_ENFORCED
         ORDER BY Day__c];
     }
+    
+    @AuraEnabled(cacheable=true)
+    public static List<Patient_Record__c> getByCondition(String condition) {
+        return [SELECT Day__c, Medical_Condition__c, Name__c, Recorded_By__c 
+        FROM Patient_Record__c
+        WHERE Medical_Condition__c=:condition
+        WITH SECURITY_ENFORCED
+        ORDER BY Day__c];
+    }
+    @AuraEnabled(cacheable=true)
+    public static List<Patient_Record__c> updateRecords(boolean reload){
+        if (reload) {
+            return get();
+        }
+        else {
+            return null;
+        }
+    }
 }

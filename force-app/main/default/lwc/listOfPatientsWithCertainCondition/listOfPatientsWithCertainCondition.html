@@ -1,6 +1,10 @@
 <template>
     <lightning-card>
-        <h1>Patients Records</h1>
+        <h1>Search Records by condition</h1>
+        <lightning-input 
+        type="search" 
+        onchange={handleKeyChange} 
+        label="Search"></lightning-input>
         <template if:true={records.data}>
             <lightning-datatable
                 key-field="Id"
@@ -9,6 +13,5 @@
             >
            </lightning-datatable>
         </template>
-        <lightning-button label="Force Refresh" onclick={handleClick}></lightning-button>
     </lightning-card>
 </template>

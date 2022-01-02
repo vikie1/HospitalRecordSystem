@@ -3,7 +3,9 @@
         <p>Only a medic can fill this</p>
     <lightning-record-form
     object-api-name={object}
-    fields={fields}>
+    fields={fields}
+    onsuccess={handleSuccess}>
 </lightning-record-form>
+<c-display-patient-records hidden></c-display-patient-records>
     </lightning-card>
 </template>
