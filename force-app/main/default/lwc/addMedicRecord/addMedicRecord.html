@@ -1,7 +1,10 @@
 <template>
     <lightning-card>
-        <lightning-record-form
-        object-api-name={object}
-        fields={fields}></lightning-record-form>
+       <div>
+            <lightning-input type="text" label="Name" value={record.Name__c} onchange={handleNameChange}></lightning-input>
+            <lightning-input type="text" label="Roles" value={record.Role__c} onchange={handleRoleChange}></lightning-input>
+            <lightning-button label="Submit" onclick={handleSave} variant="brand"></lightning-button>
+        </div>
     </lightning-card>
+
 </template>

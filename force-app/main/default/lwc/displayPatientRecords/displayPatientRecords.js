@@ -12,16 +12,8 @@ const COLUMNS = [
     { label: 'Date', fieldName: DATE_FIELD.fieldApiName, type: 'date' }
 ];
 export default class DisplayPatientRecords extends LightningElement {
-    //@track needRefresh = false;
     @wire(get) records;
-    //@track records = [];
     columns = COLUMNS;
-    // connectedCallback(){
-    //     get()
-    //     .then((result)=> {
-    //         this.records = result;
-    //     })
-    // }
     @api handleRefresh(refresh){
             refreshApex(this.get);
             refreshApex(this.records);

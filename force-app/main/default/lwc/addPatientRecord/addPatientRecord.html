@@ -1,11 +1,17 @@
 <template>
     <lightning-card>
         <p>Only a medic can fill this</p>
-    <lightning-record-form
+    <!-- <lightning-record-form
     object-api-name={object}
     fields={fields}
     onsuccess={handleSuccess}>
-</lightning-record-form>
+</lightning-record-form> -->
+<div>
+    <lightning-input type="text" label="Name" value={record.Name__c} onchange={handleNameChange}></lightning-input>
+    <lightning-input type="text" label="Recorded By" value={record.Recorded_By__c} onchange={handleRecorderChange}></lightning-input>
+    <lightning-input type="text" label="Medical Condition" value={record.Medical_Condition__c} onchange={handleConditionChange}></lightning-input>
+    <lightning-button label="Submit" onclick={handleSave} variant="brand"></lightning-button>
+</div>
 <c-display-patient-records hidden></c-display-patient-records>
     </lightning-card>
 </template>

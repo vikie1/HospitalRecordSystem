@@ -19,13 +19,13 @@ public with sharing class NumberOfRecordedPatients {
         WITH SECURITY_ENFORCED
         ORDER BY Day__c];
     }
-    @AuraEnabled(cacheable=true)
-    public static List<Patient_Record__c> updateRecords(boolean reload){
-        if (reload) {
-            return get();
-        }
-        else {
-            return null;
+    @AuraEnabled
+    public static Patient_Record__c save(Patient_Record__c record){
+        try {
+            insert record;
+            return record;
+        } catch (Exception exp) {
+            throw new AuraHandledException(exp.getMessage());
         }
     }
 }

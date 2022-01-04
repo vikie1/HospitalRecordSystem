@@ -1,5 +1,6 @@
 import { LightningElement, wire } from 'lwc';
 import get from '@salesforce/apex/MedicRecords.get';
+import {refreshApex } from '@salesforce/apex';
 import NAME_FIELD from '@salesforce/schema/Medical_Practitioner__c.Name__c';
 import ROLE_FIELD from '@salesforce/schema/Medical_Practitioner__c.Role__c';
 const COLUMNS = [
@@ -8,5 +9,10 @@ const COLUMNS = [
 ];
 export default class DisplayPatientRecords extends LightningElement {
     @wire(get) records;
-    columns = COLUMNS;  
+    columns = COLUMNS;
+    //incase of no auto refresh
+    handleClick(event){
+        refreshApex(this.get);
+        refreshApex(this.records);
+    }  
 }

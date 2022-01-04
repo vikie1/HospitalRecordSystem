@@ -10,4 +10,13 @@ public with sharing class MedicRecords {
         ORDER BY Role__c
         ];
     }
+    @AuraEnabled
+    public static Medical_Practitioner__c save(Medical_Practitioner__c medical_practitioner){
+        try {
+            insert medical_practitioner;
+            return medical_practitioner;
+        } catch (Exception exp) {
+            throw new AuraHandledException(exp.getMessage());
+        }
+    }
 }
