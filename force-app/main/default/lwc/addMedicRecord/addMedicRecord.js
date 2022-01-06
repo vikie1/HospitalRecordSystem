@@ -24,6 +24,13 @@ export default class AddMedicRecord extends LightningElement {
                 variant:'success'
             });
             this.dispatchEvent(toastEvent);
+            this.cleanup();
         })
+    }
+
+    cleanup(){
+        this.template.querySelectorAll('lightning-input').forEach(element => {
+              element.value = null;    
+        });
     }
 }

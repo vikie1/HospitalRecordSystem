@@ -1,5 +1,5 @@
-public with sharing class MedicRecords {
-    public MedicRecords() {
+public with sharing class MedicsController {
+    public MedicsController() {
 
     }
     @AuraEnabled(cacheable=true)

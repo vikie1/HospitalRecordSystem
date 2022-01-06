@@ -1,5 +1,5 @@
 import { api, LightningElement, track, wire } from 'lwc';
-import get from '@salesforce/apex/NumberOfRecordedPatients.get';
+import get from '@salesforce/apex/PatientsController.get';
 import {refreshApex } from '@salesforce/apex';
 import NAME_FIELD from '@salesforce/schema/Patient_Record__c.Name__c';
 import MEDIC_FIELD from '@salesforce/schema/Patient_Record__c.Recorded_By__c';

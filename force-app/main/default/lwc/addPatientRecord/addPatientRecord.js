@@ -1,5 +1,5 @@
 import { LightningElement, track } from 'lwc';
-import save from '@salesforce/apex/NumberOfRecordedPatients.save';
+import save from '@salesforce/apex/PatientsController.save';
 import PATIENT_OBJECT from '@salesforce/schema/Patient_Record__c';
 import NAME from '@salesforce/schema/Patient_Record__c.Name__c';
 import RecordedBy from '@salesforce/schema/Patient_Record__c.Recorded_By__c';
@@ -34,6 +34,12 @@ export default class AddPatientRecord extends LightningElement {
             });
             this.dispatchEvent(toastEvent);
             this.template.querySelector('c-display-patient-records').handleRefresh(true);
+            this.cleanup();
         })
+    }
+    cleanup(){
+        this.template.querySelectorAll('lightning-input').forEach(element => {
+              element.value = null;    
+        });
     }
 }

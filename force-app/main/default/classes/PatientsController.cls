@@ -1,5 +1,5 @@
-public with sharing class NumberOfRecordedPatients {
-    public NumberOfRecordedPatients() {
+public with sharing class PatientsController {
+    public PatientsController() {
 
     }
 
