@@ -1,5 +1,5 @@
 import { LightningElement, track } from 'lwc';
-import save from '@salesforce/apex/MedicRecords.save';
+import save from '@salesforce/apex/MedicsController.save';
 import NAME from '@salesforce/schema/Medical_Practitioner__c.Name__c';
 import Role from '@salesforce/schema/Medical_Practitioner__c.Role__c';
 import {ShowToastEvent} from 'lightning/platformShowToastEvent';

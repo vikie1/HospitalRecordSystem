@@ -1,5 +1,5 @@
 import { LightningElement, track, wire } from 'lwc';
-import getByCondition from '@salesforce/apex/NumberOfRecordedPatients.getByCondition';
+import getByCondition from '@salesforce/apex/PatientsController.getByCondition';
 import NAME_FIELD from '@salesforce/schema/Patient_Record__c.Name__c';
 import MEDIC_FIELD from '@salesforce/schema/Patient_Record__c.Recorded_By__c';
 import CONDITION_FIELD from '@salesforce/schema/Patient_Record__c.Medical_Condition__c';
